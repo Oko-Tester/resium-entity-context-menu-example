@@ -1,0 +1,121 @@
+import { createRoot } from "react-dom/client";
+import { Ion } from "cesium";
+import App from "./App";
+import { StrictMode } from "react";
+import {
+  EntityContextMenu,
+  EntityContextMenuProvider,
+} from "resium-entity-context-menu";
+import "resium-entity-context-menu/styles.css";
+import "./App.css";
+
+Ion.defaultAccessToken = import.meta.env.VITE_CESIUM_TOKEN;
+
+const defaultFactory = (ctx: any) => [
+  {
+    id: "info",
+    label: "Show Info",
+    onClick: () => console.log(ctx),
+  },
+  {
+    id: "edit",
+    label: "Edit Entity",
+    onClick: () => console.log(ctx),
+  },
+  {
+    id: "delete",
+    label: "Delete Entity",
+    onClick: () => console.log(ctx),
+  },
+];
+
+const factoriesByType = {
+  Point: (ctx: any) => [
+    {
+      id: "coordinates",
+      label: "Copy Coordinates",
+      onClick: () => {
+        console.log("Copying coordinates:", ctx);
+        // Hier könntest du die Koordinaten in die Zwischenablage kopieren
+      },
+    },
+    {
+      id: "move",
+      label: "Move Point",
+      onClick: () => console.log("Moving point:", ctx),
+    },
+    {
+      id: "info",
+      label: "Point Info",
+      onClick: () => console.log("Point info:", ctx),
+    },
+    {
+      id: "delete",
+      label: "Delete Point",
+      onClick: () => console.log("Deleting point:", ctx),
+    },
+  ],
+  Polygon: (ctx: any) => [
+    {
+      id: "area",
+      label: "Calculate Area",
+      onClick: () => console.log("Calculating area:", ctx),
+    },
+    {
+      id: "edit",
+      label: "Edit Polygon",
+      onClick: () => console.log("Editing polygon:", ctx),
+    },
+    {
+      id: "delete",
+      label: "Delete Polygon",
+      onClick: () => console.log("Deleting polygon:", ctx),
+    },
+  ],
+  Polyline: (ctx: any) => [
+    {
+      id: "length",
+      label: "Measure Length",
+      onClick: () => console.log("Measuring length:", ctx),
+    },
+    {
+      id: "edit",
+      label: "Edit Line",
+      onClick: () => console.log("Editing line:", ctx),
+    },
+    {
+      id: "delete",
+      label: "Delete Line",
+      onClick: () => console.log("Deleting line:", ctx),
+    },
+  ],
+  Billboard: (ctx: any) => [
+    {
+      id: "changeIcon",
+      label: "Change Icon",
+      onClick: () => console.log("Changing icon:", ctx),
+    },
+    {
+      id: "info",
+      label: "Billboard Info",
+      onClick: () => console.log("Billboard info:", ctx),
+    },
+    {
+      id: "delete",
+      label: "Remove Billboard",
+      onClick: () => console.log("Removing billboard:", ctx),
+    },
+  ],
+};
+
+createRoot(document.getElementById("root")!).render(
+  <StrictMode>
+    <EntityContextMenuProvider
+      defaultFactory={defaultFactory}
+      factoriesByType={factoriesByType}
+    >
+      <App />
+      <EntityContextMenu />
+    </EntityContextMenuProvider>
+  </StrictMode>
+);
