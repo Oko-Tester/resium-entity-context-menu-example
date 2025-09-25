@@ -2,7 +2,9 @@
 
 Dieses Repository zeigt, wie das `resium-entity-context-menu` npm-Paket in einer React + Cesium Anwendung verwendet wird.
 
-## 🚀 Überblick
+## 🚀 Überblick / Live Demo
+
+🌐[Demo](https://resium-entitiy-context-menu-example.okotester.de)
 
 Das `resium-entity-context-menu` Paket ermöglicht es, Kontext-Menüs für Cesium-Entitäten in Resium-Anwendungen zu erstellen. Mit einem einfachen Rechtsklick auf eine Entität können verschiedene Aktionen ausgeführt werden.
 
