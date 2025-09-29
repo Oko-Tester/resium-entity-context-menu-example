@@ -5,13 +5,15 @@ import { StrictMode } from "react";
 import {
   EntityContextMenu,
   EntityContextMenuProvider,
+  type MenuFactory,
 } from "resium-entity-context-menu";
 import "resium-entity-context-menu/styles.css";
 import "./App.css";
+import { Viewer } from "resium";
 
 Ion.defaultAccessToken = import.meta.env.VITE_CESIUM_TOKEN;
 
-const defaultFactory = (ctx: any) => [
+const defaultFactory: MenuFactory = (ctx: any) => [
   {
     id: "info",
     label: "Show Info",
@@ -29,16 +31,16 @@ const defaultFactory = (ctx: any) => [
   },
 ];
 
-const factoriesByType = {
+const factoriesByType: Record<string, MenuFactory> = {
   Point: (ctx: any) => [
     {
       id: "coordinates",
       label: "Copy Coordinates",
       onClick: () => {
         console.log("Copying coordinates:", ctx);
-        // Hier könntest du die Koordinaten in die Zwischenablage kopieren
       },
     },
+    { id: "separator", label: "", type: "separator" },
     {
       id: "move",
       label: "Move Point",
@@ -110,12 +112,17 @@ const factoriesByType = {
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <EntityContextMenuProvider
-      defaultFactory={defaultFactory}
-      factoriesByType={factoriesByType}
+    <Viewer
+      full
+      style={{ width: "100vw", height: "100vh" }}
     >
-      <App />
-      <EntityContextMenu />
-    </EntityContextMenuProvider>
+      <EntityContextMenuProvider
+        defaultFactory={defaultFactory}
+        factoriesByType={factoriesByType}
+      >
+        <App />
+        <EntityContextMenu />
+      </EntityContextMenuProvider>
+    </Viewer>
   </StrictMode>
 );
