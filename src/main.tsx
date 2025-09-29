@@ -64,8 +64,26 @@ const factoriesByType: Record<string, MenuFactory> = {
       onClick: () => console.log("Calculating area:", ctx),
     },
     {
-      id: "edit",
-      label: "Edit Polygon",
+      id: "options",
+      label: "Options",
+      type: "submenu",
+      items: [
+        {
+          id: "option1",
+          label: "Option 1",
+          onClick: () => console.log("Option 1: ", ctx),
+        },
+        {
+          id: "option2",
+          label: "Option 2",
+          onClick: () => console.log("Option 3: ", ctx),
+        },
+        {
+          id: "option3",
+          label: "Option 3",
+          onClick: () => console.log("Option 3: ", ctx),
+        },
+      ],
       onClick: () => console.log("Editing polygon:", ctx),
     },
     {

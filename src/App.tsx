@@ -20,11 +20,11 @@ function App() {
             entityType: "Point",
           });
         }}
-      ></ResiumEntity>
+      />
       <ResiumEntity
         name="New York"
         position={Cartesian3.fromDegrees(-74.0, 40.716667, 100)}
-        point={{ pixelSize: 10, color: Color.RED }}
+        point={{ pixelSize: 10, color: Color.ORANGE }}
         onRightClick={(pos, target) =>
           showMenu({
             clickedAt: new Date().toISOString(),
@@ -34,11 +34,11 @@ function App() {
             entityType: "Billboard",
           })
         }
-      ></ResiumEntity>
+      />
       <ResiumEntity
         name="Köln"
         position={Cartesian3.fromDegrees(6.95, 50.933333, 100)}
-        point={{ pixelSize: 10, color: Color.RED }}
+        point={{ pixelSize: 10, color: Color.BLACK }}
         onRightClick={(pos, target) =>
           showMenu({
             clickedAt: new Date().toISOString(),
@@ -48,7 +48,27 @@ function App() {
             entityType: "Polyline",
           })
         }
-      ></ResiumEntity>
+      />
+      <ResiumEntity
+        name="Dubai"
+        position={
+          new Cartesian3(
+            3317626.187407601,
+            4738061.226661606,
+            2679116.7247839617
+          )
+        }
+        point={{ pixelSize: 10, color: Color.GREEN }}
+        onRightClick={(pos, target) =>
+          showMenu({
+            clickedAt: new Date().toISOString(),
+            entityId: target.id.id,
+            position: pos.position ?? new Cartesian2(),
+            entityData: target.primitive,
+            entityType: "Polygon",
+          })
+        }
+      />
     </>
   );
 }
