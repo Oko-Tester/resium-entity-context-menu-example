@@ -10,7 +10,11 @@ function App() {
       <ResiumEntity
         name="Tokyo"
         position={Cartesian3.fromDegrees(139.767052, 35.681167, 100)}
-        point={{ pixelSize: 10, color: Color.RED }}
+        billboard={{
+          image: "src/assets/Geo2Cart.png",
+          height: 20,
+          width: 20,
+        }}
         onRightClick={(pos, target) => {
           showMenu({
             clickedAt: new Date().toISOString(),
@@ -24,7 +28,11 @@ function App() {
       <ResiumEntity
         name="New York"
         position={Cartesian3.fromDegrees(-74.0, 40.716667, 100)}
-        point={{ pixelSize: 10, color: Color.ORANGE }}
+        billboard={{
+          image: "src/assets/Geo2Cart.png",
+          height: 20,
+          width: 20,
+        }}
         onRightClick={(pos, target) =>
           showMenu({
             clickedAt: new Date().toISOString(),
@@ -38,7 +46,11 @@ function App() {
       <ResiumEntity
         name="Köln"
         position={Cartesian3.fromDegrees(6.95, 50.933333, 100)}
-        point={{ pixelSize: 10, color: Color.BLACK }}
+        billboard={{
+          image: "src/assets/Geo2Cart.png",
+          height: 20,
+          width: 20,
+        }}
         onRightClick={(pos, target) =>
           showMenu({
             clickedAt: new Date().toISOString(),
@@ -58,7 +70,11 @@ function App() {
             2679116.7247839617
           )
         }
-        point={{ pixelSize: 10, color: Color.GREEN }}
+        billboard={{
+          image: "src/assets/Geo2Cart.png",
+          height: 20,
+          width: 20,
+        }}
         onRightClick={(pos, target) =>
           showMenu({
             clickedAt: new Date().toISOString(),
