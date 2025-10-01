@@ -1,5 +1,5 @@
 import { Entity as ResiumEntity } from "resium";
-import { Cartesian2, Cartesian3, Color } from "cesium";
+import { Cartesian2, Cartesian3 } from "cesium";
 import { useEntityContextMenu } from "resium-entity-context-menu";
 
 function App() {
