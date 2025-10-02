@@ -11,7 +11,7 @@ function App() {
         name="Tokyo"
         position={Cartesian3.fromDegrees(139.767052, 35.681167, 100)}
         billboard={{
-          image: "src/assets/Geo2Cart.png",
+          image: "assets/Geo2Cart.png",
           height: 20,
           width: 20,
         }}
@@ -29,7 +29,7 @@ function App() {
         name="New York"
         position={Cartesian3.fromDegrees(-74.0, 40.716667, 100)}
         billboard={{
-          image: "src/assets/Geo2Cart.png",
+          image: "assets/Geo2Cart.png",
           height: 20,
           width: 20,
         }}
@@ -47,7 +47,7 @@ function App() {
         name="Köln"
         position={Cartesian3.fromDegrees(6.95, 50.933333, 100)}
         billboard={{
-          image: "src/assets/Geo2Cart.png",
+          image: "assets/Geo2Cart.png",
           height: 20,
           width: 20,
         }}
@@ -71,7 +71,7 @@ function App() {
           )
         }
         billboard={{
-          image: "src/assets/Geo2Cart.png",
+          image: "assets/Geo2Cart.png",
           height: 20,
           width: 20,
         }}
