@@ -17,6 +17,7 @@ const defaultFactory: MenuFactory = (ctx: any) => [
   {
     id: "info",
     label: "Show Info",
+    icon: "📋",
     onClick: () => console.log(ctx),
   },
   {
@@ -43,6 +44,7 @@ const factoriesByType: Record<string, MenuFactory> = {
     { id: "separator", label: "", type: "separator" },
     {
       id: "move",
+      icon: "📋",
       label: "Move Point",
       onClick: () => console.log("Moving point:", ctx),
     },
@@ -96,6 +98,7 @@ const factoriesByType: Record<string, MenuFactory> = {
     {
       id: "length",
       label: "Measure Length",
+      icon: "📏",
       onClick: () => console.log("Measuring length:", ctx),
     },
     {
@@ -112,6 +115,7 @@ const factoriesByType: Record<string, MenuFactory> = {
   Billboard: (ctx: any) => [
     {
       id: "changeIcon",
+      icon: "🔄",
       label: "Change Icon",
       onClick: () => console.log("Changing icon:", ctx),
     },
@@ -130,10 +134,7 @@ const factoriesByType: Record<string, MenuFactory> = {
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <Viewer
-      full
-      style={{ width: "100vw", height: "100vh" }}
-    >
+    <Viewer full style={{ width: "100vw", height: "100vh" }}>
       <EntityContextMenuProvider
         defaultFactory={defaultFactory}
         factoriesByType={factoriesByType}
