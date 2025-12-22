@@ -90,6 +90,7 @@ const factoriesByType: Record<string, MenuFactory> = {
     },
     {
       id: "delete",
+      variant: "danger",
       label: "Delete Polygon",
       onClick: () => console.log("Deleting polygon:", ctx),
     },
