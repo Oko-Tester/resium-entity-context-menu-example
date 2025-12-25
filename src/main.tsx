@@ -144,5 +144,39 @@ createRoot(document.getElementById("root")!).render(
         <EntityContextMenu />
       </EntityContextMenuProvider>
     </Viewer>
+    <div style={{ position: "absolute", top: 0, left: 0, display: "flex" }}>
+      <button
+        style={{
+          display: "flex",
+          width: "8rem",
+          gap: ".4rem",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+        onClick={() =>
+          (location.href =
+            "https://github.com/Oko-Tester/resium-entity-context-menu")
+        }
+      >
+        <img src="/assets/Github.png" width={20} height={20} />
+        Link to Github
+      </button>
+      <button
+        style={{
+          display: "flex",
+          width: "8rem",
+          gap: ".4rem",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+        onClick={() =>
+          (location.href =
+            "https://www.npmjs.com/package/resium-entity-context-menu")
+        }
+      >
+        <img src="/assets/npm.jpg" width={20} height={20} />
+        Link to NPM
+      </button>
+    </div>
   </StrictMode>
 );
